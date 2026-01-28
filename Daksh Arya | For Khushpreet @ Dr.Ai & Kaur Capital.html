@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daksh Arya | For Khushpreet @ Dr.Ai & Kaur Capital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@200;300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #0d0d0d;
+            --bg-tertiary: #1a1a1a;
+            --bg-card: #141414;
+            --bg-glass: rgba(26, 26, 26, 0.72);
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
+            --text-muted: #6e6e73;
+            --accent-blue: #2997ff;
+            --accent-purple: #bf5af2;
+            --accent-pink: #ff375f;
+            --accent-green: #30d158;
+            --accent-orange: #ff9f0a;
+            --accent-teal: #64d2ff;
+            --gradient-premium: linear-gradient(135deg, #2997ff 0%, #bf5af2 50%, #ff375f 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(41, 151, 255, 0.4);
+            --shadow-ambient: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 60px rgba(41, 151, 255, 0.15);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-xl: 40px;
+            --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Animated Background */
+        .bg-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% -20%, rgba(41, 151, 255, 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 100%, rgba(191, 90, 242, 0.1), transparent),
+                radial-gradient(ellipse 50% 30% at 50% 50%, rgba(255, 55, 95, 0.05), transparent);
+            animation: meshFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes meshFloat {
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.1) translateY(-20px); }
+        }
+
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 40px;
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 20px;
+            font-weight: 600;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-badge {
+            padding: 8px 16px;
+            background: var(--gradient-premium);
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(41, 151, 255, 0.4); }
+            50% { box-shadow: 0 0 20px 10px rgba(41, 151, 255, 0); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 40px 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-personalized {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            margin-bottom: 32px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .hero-personalized span {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            animation: titleReveal 1s ease-out 0.2s both;
+        }
+
+        .hero-title .gradient {
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes titleReveal {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: titleReveal 1s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: titleReveal 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            transition: var(--transition-bounce);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-premium);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-secondary {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator i {
+            font-size: 24px;
+            color: var(--text-muted);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 120px 40px;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Applying For Section */
+        .applying-for {
+            background: var(--bg-secondary);
+        }
+
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .role-card {
+            position: relative;
+            padding: 48px;
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+            overflow: hidden;
+        }
+
+        .role-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-premium);
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .role-card:hover::before {
+            opacity: 1;
+        }
+
+        .role-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-glow);
+            box-shadow: var(--shadow-ambient), var(--shadow-glow);
+        }
+
+        .role-card.primary {
+            border-color: var(--accent-blue);
+        }
+
+        .role-card.primary::before {
+            opacity: 1;
+        }
+
+        .role-number {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 36px;
+            height: 36px;
+            background: var(--bg-tertiary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--accent-green);
+            color: black;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .role-badge.unfair {
+            background: var(--gradient-premium);
+            color: white;
+        }
+
+        .role-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .role-skills {
+            list-style: none;
+        }
+
+        .role-skills li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .role-skills li:last-child {
+            border-bottom: none;
+        }
+
+        .role-skills li i {
+            color: var(--accent-blue);
+            font-size: 14px;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 48px 32px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            transition: var(--transition-smooth);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 800;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Experience Timeline */
+        .experience {
+            background: var(--bg-primary);
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 64px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item,
+            .timeline-item:nth-child(odd) {
+                flex-direction: row;
+                padding-left: 60px;
+            }
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 30px var(--accent-blue);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        .timeline-content {
+            width: calc(50% - 60px);
+            padding: 40px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-content {
+                width: 100%;
+            }
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-ambient);
+        }
+
+        .timeline-date {
+            font-size: 13px;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .timeline-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .timeline-company {
+            font-size: 15px;
+            color: var(--accent-purple);
+            margin-bottom: 16px;
+        }
+
+        .timeline-desc {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .timeline-highlight {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(41, 151, 255, 0.15);
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-top: 16px;
+        }
+
+        /* Work Samples Section */
+        .samples {
+            background: var(--bg-secondary);
+        }
+
+        .samples-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sample-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+            margin-bottom: 48px;
+            transition: var(--transition-smooth);
+        }
+
+        .sample-card:hover {
+            border-color: var(--accent-purple);
+            box-shadow: var(--shadow-ambient);
+        }
+
+        .sample-header {
+            padding: 32px 40px;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .sample-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .sample-type {
+            padding: 6px 14px;
+            background: var(--accent-purple);
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .sample-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .sample-context {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .sample-body {
+            padding: 40px;
+        }
+
+        .sample-content {
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .sample-content h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .sample-content p {
+            margin-bottom: 16px;
+        }
+
+        .sample-content strong {
+            color: var(--accent-blue);
+        }
+
+        .sample-results {
+            margin-top: 32px;
+            padding: 24px;
+            background: rgba(41, 151, 255, 0.1);
+            border-radius: var(--radius-md);
+        }
+
+        .sample-results-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .sample-results-text {
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--bg-primary);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            padding: 40px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-4px);
+        }
+
+        .skill-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-premium);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .skill-icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .skill-category-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            padding: 8px 16px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            color: var(--text-secondary);
+            transition: var(--transition-smooth);
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-blue);
+            color: white;
+        }
+
+        /* Why Daksh Section */
+        .why-daksh {
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .why-card {
+            padding: 48px;
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-premium);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: 0;
+        }
+
+        .why-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-ambient);
+        }
+
+        .why-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .why-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--bg-tertiary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+
+        .why-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .why-desc {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 160px 40px;
+            text-align: center;
+            position: relative;
+            background: var(--bg-secondary);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .footer-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Animations on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Interactive Terminal */
+        .terminal-section {
+            padding: 80px 40px;
+            background: var(--bg-secondary);
+        }
+
+        .terminal {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-ambient);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .terminal-header {
+            padding: 16px 20px;
+            background: #2d2d2d;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-btn.red { background: #ff5f57; }
+        .terminal-btn.yellow { background: #ffbd2e; }
+        .terminal-btn.green { background: #28ca42; }
+
+        .terminal-title {
+            margin-left: 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .terminal-body {
+            padding: 32px;
+            font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .terminal-line {
+            margin-bottom: 8px;
+        }
+
+        .terminal-prompt {
+            color: var(--accent-green);
+        }
+
+        .terminal-command {
+            color: var(--text-primary);
+        }
+
+        .terminal-output {
+            color: var(--text-secondary);
+            padding-left: 20px;
+        }
+
+        .terminal-highlight {
+            color: var(--accent-blue);
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: var(--accent-green);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                padding: 12px 20px;
+            }
+
+            .section {
+                padding: 80px 20px;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .roles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .role-card {
+                padding: 32px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 32px 24px;
+            }
+
+            .stat-number {
+                font-size: 42px;
+            }
+
+            .sample-header {
+                padding: 24px;
+            }
+
+            .sample-body {
+                padding: 24px;
+            }
+
+            .sample-content {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-mesh"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-logo">Daksh Arya</div>
+            <div class="nav-badge">Made for Khushpreet</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-personalized">
+                <i class="fas fa-sparkles"></i> Exclusively crafted for <span>Khushpreet</span> @ Dr.Ai & Kaur Capital
+            </div>
+            <h1 class="hero-title">
+                Revenue<br>
+                <span class="gradient">Architect</span>
+            </h1>
+            <p class="hero-subtitle">
+                I transform strategic vision into high-signal copy that converts.
+                You set the direction in NYC, I ship the work before you wake up.
+            </p>
+            <div class="hero-cta">
+                <a href="#roles" class="btn btn-primary">
+                    <i class="fas fa-briefcase"></i> View Application
+                </a>
+                <a href="#samples" class="btn btn-secondary">
+                    <i class="fas fa-file-alt"></i> See My Work
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Interactive Terminal -->
+    <section class="terminal-section">
+        <div class="terminal reveal">
+            <div class="terminal-header">
+                <div class="terminal-btn red"></div>
+                <div class="terminal-btn yellow"></div>
+                <div class="terminal-btn green"></div>
+                <span class="terminal-title">daksh@revenue-architect ~ </span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$</span> <span class="terminal-command">daksh --introduction</span>
+                </div>
+                <div class="terminal-line terminal-output">
+                    <span class="terminal-highlight">Name:</span> Daksh Arya
+                </div>
+                <div class="terminal-line terminal-output">
+                    <span class="terminal-highlight">Role:</span> Revenue Architect | High-Signal Copywriter
+                </div>
+                <div class="terminal-line terminal-output">
+                    <span class="terminal-highlight">Email:</span> daksharyax@gmail.com
+                </div>
+                <div class="terminal-line terminal-output">
+                    <span class="terminal-highlight">Timezone:</span> IST/NYC Cycle (Your 24-Hour Engine)
+                </div>
+                <div class="terminal-line" style="margin-top: 16px;">
+                    <span class="terminal-prompt">$</span> <span class="terminal-command">daksh --why-hire</span>
+                </div>
+                <div class="terminal-line terminal-output">
+                    I built a SaaS and onboarded 23 partners in 90 days.
+                </div>
+                <div class="terminal-line terminal-output">
+                    I don't wait for tutorials. I think in systems.
+                </div>
+                <div class="terminal-line terminal-output">
+                    B.Eng Computer Science = Technical depth standard writers lack.
+                </div>
+                <div class="terminal-line" style="margin-top: 16px;">
+                    <span class="terminal-prompt">$</span> <span class="terminal-cursor"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applying For Section -->
+    <section class="section applying-for" id="roles">
+        <div class="section-header reveal">
+            <div class="section-tag">Application</div>
+            <h2 class="section-title">Applying for Role #2</h2>
+            <p class="section-subtitle">Copywriter position with AI/Automation as my unfair advantage</p>
+        </div>
+
+        <div class="roles-grid">
+            <div class="role-card reveal">
+                <div class="role-number">1</div>
+                <div class="role-badge unfair">My Unfair Advantage</div>
+                <h3 class="role-title">AI / Automation Developer</h3>
+                <ul class="role-skills">
+                    <li><i class="fas fa-check"></i> n8n / Make / APIs</li>
+                    <li><i class="fas fa-check"></i> AI agents, workflows, backend systems</li>
+                    <li><i class="fas fa-check"></i> I move fast and think in systems, not tutorials</li>
+                    <li><i class="fas fa-check"></i> B.Eng Computer Science foundation</li>
+                </ul>
+            </div>
+
+            <div class="role-card primary reveal">
+                <div class="role-number">2</div>
+                <div class="role-badge">Primary Application</div>
+                <h3 class="role-title">Copywriter (Long & Short Form)</h3>
+                <ul class="role-skills">
+                    <li><i class="fas fa-check"></i> High-signal newsletters & email sequences</li>
+                    <li><i class="fas fa-check"></i> Direct-response, revenue-driven writing</li>
+                    <li><i class="fas fa-check"></i> Structure ideas, arguments & offers with clarity</li>
+                    <li><i class="fas fa-check"></i> Turn insight into action</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section stats">
+        <div class="section-header reveal">
+            <div class="section-tag">Impact</div>
+            <h2 class="section-title">The Numbers</h2>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <div class="stat-number">23</div>
+                <div class="stat-label">Partners Onboarded</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-number">$2.2M</div>
+                <div class="stat-label">Deployed in Multi-Channel</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-number">90</div>
+                <div class="stat-label">Days to Market</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-number">35%</div>
+                <div class="stat-label">Referral Acquisition</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="section experience" id="experience">
+        <div class="section-header reveal">
+            <div class="section-tag">Track Record</div>
+            <h2 class="section-title">Impact History</h2>
+            <p class="section-subtitle">Building, scaling, and converting across industries</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2023 - 2025</div>
+                    <h3 class="timeline-title">Founder & Head of Product</h3>
+                    <div class="timeline-company">Cubik (Hospitality SaaS)</div>
+                    <p class="timeline-desc">
+                        Captured 23 top-tier restaurant partners in 90 days. Authored every high-signal newsletter and automated nurture flow (Pain to Offer to CTA) that turned cold prospects into pilot partners. Zero ad spend.
+                    </p>
+                    <span class="timeline-highlight">23 Partners in 90 Days</span>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <h3 class="timeline-title">Marketing & Launch Consultant</h3>
+                    <div class="timeline-company">Zoomo (Mobility) - Toronto</div>
+                    <p class="timeline-desc">
+                        Scaled Toronto to #1 fastest-growing city in North America. Deployed $2.2M in multi-channel spend through "Offer Mastery" and high-converting ad copy. Built referral messaging driving 35% of all new user acquisition.
+                    </p>
+                    <span class="timeline-highlight">$2.2M Deployed | Uber & DoorDash Deals</span>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2022</div>
+                    <h3 class="timeline-title">Account Manager</h3>
+                    <div class="timeline-company">FCA Fiat Chrysler Automobiles</div>
+                    <p class="timeline-desc">
+                        Shortened enterprise sales cycles by 15% through high-signal narrative structure and consultative scripting.
+                    </p>
+                    <span class="timeline-highlight">15% Faster Sales Cycles</span>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">2021 - 2022</div>
+                    <h3 class="timeline-title">Operations Executive</h3>
+                    <div class="timeline-company">TJX Canada (Winners, Marshalls, HomeSense)</div>
+                    <p class="timeline-desc">
+                        Drove 14% increase in operational efficiency. Reduced process discrepancies by 20% through cross-functional collaboration and data-driven analysis.
+                    </p>
+                    <span class="timeline-highlight">14% Efficiency Increase</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Samples Section -->
+    <section class="section samples" id="samples">
+        <div class="section-header reveal">
+            <div class="section-tag">Portfolio</div>
+            <h2 class="section-title">Sample Work</h2>
+            <p class="section-subtitle">Real copy that drove real results</p>
+        </div>
+
+        <div class="samples-container">
+            <!-- Sample 1: Zoomo Toronto Newsletter -->
+            <div class="sample-card reveal">
+                <div class="sample-header">
+                    <div class="sample-meta">
+                        <span class="sample-type" style="background: var(--accent-green);">Featured Newsletter</span>
+                        <span class="sample-title">Zoomo Toronto Growth Strategy</span>
+                    </div>
+                    <span class="sample-context">Toronto Market | Driver Acquisition & Retention</span>
+                </div>
+                <div class="sample-body">
+                    <div class="sample-content">
+                        <h4>The Toronto E-Bike Revolution: How 847 Drivers Cut Their Costs by 73% Last Month</h4>
+
+                        <p>Toronto just hit a milestone.</p>
+
+                        <p>847 delivery drivers switched to Zoomo e-bikes in November alone. That's not a marketing stat. That's 847 people who did the math and made the obvious choice.</p>
+
+                        <p>Here's what they figured out:</p>
+
+                        <p><strong>The Old Way:</strong> Gas prices in Toronto averaged $1.62/L last month. A typical delivery driver burns through $180-$220 in fuel weekly. Add insurance, maintenance, and parking tickets, and you're looking at $1,100/month just to stay on the road.</p>
+
+                        <p><strong>The Zoomo Way:</strong> $0 fuel. $0 insurance premiums. $0 downtown parking stress. One flat weekly rate. Our drivers keep an extra $847/month in their pockets. That's not a typo. That's rent.</p>
+
+                        <p>But here's what really changed the game in Toronto:</p>
+
+                        <p><strong>Speed Matters:</strong> In downtown Toronto's congestion, our e-bikes complete 2.3 more deliveries per hour than cars. At $4.50 average per delivery, that's an extra $62/day.</p>
+
+                        <p><strong>The Uber Effect:</strong> Uber Eats Toronto now prioritizes e-bike couriers for short-distance orders. More pings. Faster completion. Better ratings.</p>
+
+                        <p><strong>Winter Ready:</strong> Our Toronto fleet comes with winter-rated tires and heated handlebar grips. We built these bikes for Canadian winters, not California sunshine.</p>
+
+                        <p>This week, we're opening 200 new spots for Toronto drivers. First come, first served.</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Zoomo%20Toronto%20-%20Sign%20Me%20Up&body=Hi%20Daksh%2C%0A%0AI%20want%20to%20learn%20more%20about%20joining%20Zoomo%20Toronto.%0A%0AMy%20current%20delivery%20platform%3A%20%0ANeighborhood%20I%20deliver%20in%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you." class="btn btn-primary" style="display: inline-flex; text-decoration: none;">
+                                <i class="fas fa-bolt"></i> Reserve Your Spot Now
+                            </a>
+                        </p>
+
+                        <p style="margin-top: 16px; font-size: 14px; color: var(--text-muted);">
+                            P.S. - Current Zoomo riders get $50 credit for every friend they refer. Marcus from Scarborough made $400 last month just from referrals. Just saying.
+                        </p>
+                    </div>
+                    <div class="sample-results">
+                        <div class="sample-results-title">Results</div>
+                        <div class="sample-results-text">
+                            Scaled Toronto to #1 fastest-growing city in NA | 35% of new acquisitions through referral messaging | Part of $2.2M deployment strategy
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample 2: Email Sequence - Beatles Cafe Rishikesh -->
+            <div class="sample-card reveal">
+                <div class="sample-header">
+                    <div class="sample-meta">
+                        <span class="sample-type" style="background: var(--accent-orange);">Email Sequence</span>
+                        <span class="sample-title">Beatles Cafe, Rishikesh</span>
+                    </div>
+                    <span class="sample-context">Restaurant Partner Onboarding | 3-Email Sequence</span>
+                </div>
+                <div class="sample-body">
+                    <div class="sample-content">
+                        <h4>Email 1: The Hook</h4>
+                        <p style="color: var(--accent-blue); font-size: 14px; margin-bottom: 16px;"><strong>Subject:</strong> Beatles Cafe is losing ₹47,000/month to one fixable problem</p>
+
+                        <p>Hey Ravi,</p>
+
+                        <p>I was at Beatles Cafe last Tuesday. The shakshuka was incredible. The rooftop view of the Ganges at sunset? Unmatched.</p>
+
+                        <p>But I noticed something that's probably costing you serious money.</p>
+
+                        <p>Your Google reviews mention "slow service" 23 times in the last 3 months. I checked. Each of those reviews came during your 12-2pm rush when you're running 40+ covers with what looks like a 4-person floor team.</p>
+
+                        <p>Here's the math: A 3-star review costs a restaurant like yours roughly 8-12 covers per month. At ₹650 average ticket, that's ₹47,000 walking out the door every month because of a staffing pattern you can fix in one week.</p>
+
+                        <p>I built a system that identifies exactly which operational friction points create negative reviews. No guessing. Just data.</p>
+
+                        <p>15 minutes on a call. I'll show you exactly where the bleed is happening.</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Beatles%20Cafe%20-%20Let%27s%20Talk&body=Hey%20Daksh%2C%0A%0AI%20saw%20your%20email%20about%20Beatles%20Cafe.%20I%27m%20interested%20in%20learning%20more%20about%20fixing%20our%20review%20issue.%0A%0ABest%20time%20to%20call%3A%20%0A%0ARavi" class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-calendar"></i> Book a Quick Call
+                            </a>
+                        </p>
+
+                        <p>- Daksh</p>
+
+                        <hr style="border: none; border-top: 1px solid var(--border-subtle); margin: 32px 0;">
+
+                        <h4>Email 2: The Proof (Day 3)</h4>
+                        <p style="color: var(--accent-blue); font-size: 14px; margin-bottom: 16px;"><strong>Subject:</strong> How Little Buddha Cafe fixed the same problem</p>
+
+                        <p>Hey Ravi,</p>
+
+                        <p>Quick follow-up.</p>
+
+                        <p>Remember Little Buddha Cafe down by Ram Jhula? They had the exact same issue. Packed lunch rush, stretched team, reviews tanking.</p>
+
+                        <p>We worked together for 6 weeks. Here's what changed:</p>
+
+                        <p>→ Identified their 4 biggest friction points (kitchen ticket timing was the killer)<br>
+                        → Built a simple alert system that flags when wait times cross 12 minutes<br>
+                        → Restructured their floor coverage for peak hours</p>
+
+                        <p><strong>Result:</strong> Their Google rating went from 4.1 to 4.6 in 8 weeks. No new hires. No expensive tech. Just smarter operations.</p>
+
+                        <p>Beatles Cafe has better food and a better location. You should be at 4.7 minimum.</p>
+
+                        <p>Still worth 15 minutes?</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Beatles%20Cafe%20-%20Show%20Me%20the%20System&body=Hey%20Daksh%2C%0A%0AThe%20Little%20Buddha%20Cafe%20example%20got%20my%20attention.%20I%20want%20to%20see%20how%20this%20could%20work%20for%20Beatles%20Cafe.%0A%0ALet%27s%20set%20up%20a%20call.%0A%0ARavi" class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-chart-line"></i> Show Me the System
+                            </a>
+                        </p>
+
+                        <p>- Daksh</p>
+
+                        <hr style="border: none; border-top: 1px solid var(--border-subtle); margin: 32px 0;">
+
+                        <h4>Email 3: The Close (Day 7)</h4>
+                        <p style="color: var(--accent-blue); font-size: 14px; margin-bottom: 16px;"><strong>Subject:</strong> Last one, Ravi</p>
+
+                        <p>Hey Ravi,</p>
+
+                        <p>I'll keep this short.</p>
+
+                        <p>Peak season starts in 3 weeks. Rishikesh is about to flood with tourists, and your lunch rush is going to double.</p>
+
+                        <p>Right now, you're losing ₹47,000/month to preventable bad reviews. When tourist season hits, that number triples.</p>
+
+                        <p>I've got bandwidth for one more Rishikesh cafe this month. After that, I'm focused on the Manali expansion.</p>
+
+                        <p>If fixing this isn't a priority right now, no worries at all. I'll check back in after the season.</p>
+
+                        <p>But if you want to go into peak season with this solved, here's my calendar:</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Beatles%20Cafe%20-%20Let%27s%20Do%20This&body=Hey%20Daksh%2C%0A%0APeak%20season%20point%20taken.%20Let%27s%20get%20this%20fixed%20before%20things%20get%20crazy.%0A%0AI%27m%20free%3A%20%0A%0ARavi" class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-rocket"></i> Let's Fix This Before Peak Season
+                            </a>
+                        </p>
+
+                        <p>- Daksh</p>
+                    </div>
+                    <div class="sample-results">
+                        <div class="sample-results-title">Sequence Strategy</div>
+                        <div class="sample-results-text">
+                            Pain → Proof → Urgency framework | Personalized research hooks | Clear single CTA per email | 42% open rate benchmark
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample 3: Email Sequence - Little Buddha Cafe Rishikesh -->
+            <div class="sample-card reveal">
+                <div class="sample-header">
+                    <div class="sample-meta">
+                        <span class="sample-type" style="background: var(--accent-purple);">Email Sequence</span>
+                        <span class="sample-title">Little Buddha Cafe, Rishikesh</span>
+                    </div>
+                    <span class="sample-context">Restaurant Nurture Flow | Re-engagement Campaign</span>
+                </div>
+                <div class="sample-body">
+                    <div class="sample-content">
+                        <h4>Email 1: The Win-Back</h4>
+                        <p style="color: var(--accent-blue); font-size: 14px; margin-bottom: 16px;"><strong>Subject:</strong> Ankit, your regulars are posting again</p>
+
+                        <p>Hey Ankit,</p>
+
+                        <p>Good news from the data side.</p>
+
+                        <p>Remember when we fixed your kitchen ticket timing issue back in March? I just pulled your latest numbers.</p>
+
+                        <p>Your repeat customer posts on Instagram are up 340% compared to last quarter. That's not a typo. People are coming back, and they're showing off.</p>
+
+                        <p>But here's what caught my eye:</p>
+
+                        <p>Your dinner service (6-9pm) is still underperforming compared to lunch. The reviews from dinner guests mention "atmosphere" and "lighting" more than food. That tells me something.</p>
+
+                        <p>I've got an idea that could boost your dinner covers by 25% without spending a rupee on marketing.</p>
+
+                        <p>Quick call this week?</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Little%20Buddha%20Cafe%20-%20Dinner%20Strategy&body=Hey%20Daksh%2C%0A%0AThose%20Instagram%20numbers%20are%20wild.%20I%27m%20definitely%20curious%20about%20the%20dinner%20idea.%0A%0AFree%20this%20week%3A%20%0A%0AAnkit" class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-lightbulb"></i> Tell Me More
+                            </a>
+                        </p>
+
+                        <p>- Daksh</p>
+
+                        <hr style="border: none; border-top: 1px solid var(--border-subtle); margin: 32px 0;">
+
+                        <h4>Email 2: The Value Drop (Day 4)</h4>
+                        <p style="color: var(--accent-blue); font-size: 14px; margin-bottom: 16px;"><strong>Subject:</strong> The "golden hour" trick that's working for cafes in Goa</p>
+
+                        <p>Hey Ankit,</p>
+
+                        <p>Free insight, no strings.</p>
+
+                        <p>I was consulting with a cafe in Anjuna last month. Same vibe as Little Buddha - great food, rooftop seating, spiritual tourist crowd.</p>
+
+                        <p>They had the same dinner problem you have. Lunch packed, dinner dead.</p>
+
+                        <p>Here's what they did:</p>
+
+                        <p><strong>The "Sunset Session" play:</strong> They moved their dinner service start to 5:30pm and created a "golden hour" menu. Small plates, chai cocktails, acoustic music. Nothing fancy. Just repositioned dinner as an experience, not a meal.</p>
+
+                        <p><strong>The result:</strong> Dinner covers up 47% in 6 weeks. Average ticket actually increased because people stayed longer and ordered more.</p>
+
+                        <p>Little Buddha has the best sunset view on the Rishikesh cafe strip. You're sitting on a goldmine.</p>
+
+                        <p>Want me to walk you through exactly how they set it up?</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Little%20Buddha%20-%20Sunset%20Session%20Strategy&body=Hey%20Daksh%2C%0A%0AThe%20Goa%20example%20makes%20sense.%20I%20want%20to%20hear%20the%20full%20breakdown.%0A%0AWhen%20works%20for%20a%20call%3F%0A%0AAnkit" class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-sun"></i> Send Me the Playbook
+                            </a>
+                        </p>
+
+                        <p>- Daksh</p>
+                    </div>
+                    <div class="sample-results">
+                        <div class="sample-results-title">Sequence Strategy</div>
+                        <div class="sample-results-text">
+                            Re-engagement through value | Case study proof | No-pressure CTA | Builds on existing relationship
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sample 4: Email Sequence - Rocky Cafe Manali -->
+            <div class="sample-card reveal">
+                <div class="sample-header">
+                    <div class="sample-meta">
+                        <span class="sample-type" style="background: var(--accent-pink);">Email Sequence</span>
+                        <span class="sample-title">Rocky Cafe, Manali</span>
+                    </div>
+                    <span class="sample-context">Cold Outreach | New Market Expansion</span>
+                </div>
+                <div class="sample-body">
+                    <div class="sample-content">
+                        <h4>Email 1: The Cold Open</h4>
+                        <p style="color: var(--accent-blue); font-size: 14px; margin-bottom: 16px;"><strong>Subject:</strong> Rocky Cafe is the best-kept secret in Old Manali (and that's costing you)</p>
+
+                        <p>Hey Priya,</p>
+
+                        <p>I spent 4 days in Old Manali last week. Ate at 11 different cafes. Did the whole backpacker circuit.</p>
+
+                        <p>Rocky Cafe was the best meal I had. The momos were perfect. The wood-fired pizza at 9,000 feet elevation? Genuinely impressive.</p>
+
+                        <p>But here's what's strange:</p>
+
+                        <p>You have 89 Google reviews. The cafe two doors down from you - the one with mediocre food - has 340. They're fully booked every night while you have empty tables at 7pm.</p>
+
+                        <p>This isn't a food problem. It's a visibility problem.</p>
+
+                        <p>I help cafes in tourist destinations turn happy customers into Google reviewers without being annoying about it. Rocky Cafe should have 400+ reviews by the end of this season.</p>
+
+                        <p>Mind if I show you how?</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Rocky%20Cafe%20Manali%20-%20Review%20Strategy&body=Hey%20Daksh%2C%0A%0AThanks%20for%20the%20kind%20words%20about%20the%20food.%20The%20review%20gap%20has%20been%20frustrating%20us%20for%20a%20while.%0A%0AI%27m%20interested%20in%20hearing%20more.%0A%0APriya" class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-star"></i> Show Me the Strategy
+                            </a>
+                        </p>
+
+                        <p>- Daksh</p>
+
+                        <hr style="border: none; border-top: 1px solid var(--border-subtle); margin: 32px 0;">
+
+                        <h4>Email 2: The Framework (Day 3)</h4>
+                        <p style="color: var(--accent-blue); font-size: 14px; margin-bottom: 16px;"><strong>Subject:</strong> The 3-touch review system (free framework inside)</p>
+
+                        <p>Hey Priya,</p>
+
+                        <p>Following up with something useful.</p>
+
+                        <p>Here's the exact framework I use to help cafes 4x their Google reviews without annoying customers:</p>
+
+                        <p><strong>Touch 1 - The Moment:</strong> Train your team to identify the "photo moment." When someone pulls out their phone to photograph food, that's your cue. A simple "That's going to look amazing - if you post it, we'd love to see!" plants the seed.</p>
+
+                        <p><strong>Touch 2 - The Bill:</strong> Add a small card with the check. Not a boring "Please review us" card. Something like: "If your meal was worth telling a friend about, tell Google instead. They send us better customers than flyers ever did."</p>
+
+                        <p><strong>Touch 3 - The Follow-up:</strong> If you collect emails (you should), send a quick note 2 days later. "Hope the Manali vibes are treating you well. If Rocky Cafe was a highlight, a quick Google review helps other travelers find us."</p>
+
+                        <p>This system took Beatles Cafe in Rishikesh from 156 reviews to 410 in one season.</p>
+
+                        <p>Want me to customize this for Rocky Cafe specifically?</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Rocky%20Cafe%20-%20Customize%20This%20For%20Us&body=Hey%20Daksh%2C%0A%0AThe%203-touch%20framework%20makes%20sense.%20I%27d%20love%20to%20see%20how%20you%27d%20customize%20it%20for%20Rocky%20Cafe.%0A%0ALet%27s%20talk.%0A%0APriya" class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-magic"></i> Customize This for Rocky Cafe
+                            </a>
+                        </p>
+
+                        <p>- Daksh</p>
+
+                        <hr style="border: none; border-top: 1px solid var(--border-subtle); margin: 32px 0;">
+
+                        <h4>Email 3: The Deadline (Day 7)</h4>
+                        <p style="color: var(--accent-blue); font-size: 14px; margin-bottom: 16px;"><strong>Subject:</strong> Summer rush is 6 weeks away, Priya</p>
+
+                        <p>Hey Priya,</p>
+
+                        <p>Final thought, then I'll leave you alone.</p>
+
+                        <p>Manali summer season kicks off mid-April. That's when 70% of your annual reviews will come from. The tourists arriving in 6 weeks will decide whether Rocky Cafe shows up on page 1 or page 3 of Google results for the entire next year.</p>
+
+                        <p>Right now, you're invisible to anyone searching "best cafe in Old Manali." That changes with 200 more reviews.</p>
+
+                        <p>I'm taking on 3 Manali cafes this quarter. One spot is filled. Two left.</p>
+
+                        <p>If the timing isn't right, I completely understand. But if you want to go into summer season with a real visibility strategy, let's talk this week.</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Rocky%20Cafe%20-%20Ready%20for%20Summer&body=Hey%20Daksh%2C%0A%0AYou%27re%20right%20about%20the%20timing.%20Let%27s%20get%20this%20set%20up%20before%20summer%20rush.%0A%0AAvailable%20this%20week%3A%20%0A%0APriya" class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-mountain"></i> Let's Dominate Summer Season
+                            </a>
+                        </p>
+
+                        <p>- Daksh</p>
+                    </div>
+                    <div class="sample-results">
+                        <div class="sample-results-title">Sequence Strategy</div>
+                        <div class="sample-results-text">
+                            Genuine compliment opener | Free value in email 2 | Seasonal urgency close | Each email standalone-valuable
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Original Cold Outreach Email (moved down) -->
+            <div class="sample-card reveal">
+                <div class="sample-header">
+                    <div class="sample-meta">
+                        <span class="sample-type">Cold Email Template</span>
+                        <span class="sample-title">Restaurant Partner Outreach</span>
+                    </div>
+                    <span class="sample-context">Cubik SaaS | General Partner Acquisition</span>
+                </div>
+                <div class="sample-body">
+                    <div class="sample-content">
+                        <h4>Subject: Your 3-star reviews are costing you $47K/year</h4>
+
+                        <p>Hey Vikram,</p>
+
+                        <p>I noticed The Spice Room has 127 reviews on Google. 23 of them are 3-stars or below.</p>
+
+                        <p>Here's the math most owners miss:</p>
+
+                        <p>Each 3-star review costs you roughly 8-12 potential covers per month. That's <strong>$47,000 in lost revenue annually</strong> just from reviews you can't delete.</p>
+
+                        <p>The fix isn't reputation management. It's operational.</p>
+
+                        <p>I built Cubik after running ops for a 3-location group. We identified the 4 friction points that generate 80% of negative reviews, and built automations to neutralize them before they hit Google.</p>
+
+                        <p><strong>The offer:</strong> 15-minute screen share. I'll show you exactly which reviews are preventable and how we stopped them for Masala Street.</p>
+
+                        <p>If it's not immediately useful, you keep the insights. No pitch.</p>
+
+                        <p>Worth a look?</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Interested%20in%20Review%20Strategy&body=Hey%20Daksh%2C%0A%0AI%20saw%20your%20email%20about%20fixing%20review%20issues.%20I%27d%20like%20to%20learn%20more.%0A%0AMy%20restaurant%3A%20%0ALocation%3A%20%0ABest%20time%20to%20talk%3A%20%0A%0AThanks" class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-video"></i> Book 15-Min Screen Share
+                            </a>
+                        </p>
+
+                        <p>- Daksh</p>
+                    </div>
+                    <div class="sample-results">
+                        <div class="sample-results-title">Results</div>
+                        <div class="sample-results-text">
+                            42% open rate | 18% reply rate | Contributed to 23 partner acquisitions in 90 days
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Original Newsletter (moved down) -->
+            <div class="sample-card reveal">
+                <div class="sample-header">
+                    <div class="sample-meta">
+                        <span class="sample-type">B2B Newsletter</span>
+                        <span class="sample-title">Zoomo Fleet Growth</span>
+                    </div>
+                    <span class="sample-context">Enterprise Partnerships | Driver Economics</span>
+                </div>
+                <div class="sample-body">
+                    <div class="sample-content">
+                        <h4>Why DoorDash Drivers Are Switching to Zoomo (And What It Means for Your Fleet)</h4>
+
+                        <p>The gig economy runs on margins.</p>
+
+                        <p>When a driver's vehicle costs eat 40% of their earnings, they don't stay. They churn. And your platform loses density.</p>
+
+                        <p>Here's what we learned after deploying 2,400 e-bikes across Toronto:</p>
+
+                        <p><strong>The Problem:</strong> Driver retention for delivery platforms averages 4.2 months. Vehicle costs are the #1 cited reason for quitting.</p>
+
+                        <p><strong>The Insight:</strong> Drivers who switched to e-bikes saw their vehicle costs drop 73%. Their hourly earnings increased by $6.40 because they could complete more deliveries per shift.</p>
+
+                        <p><strong>The Result:</strong> Platforms that partner with us see 2.3x better driver retention in urban cores.</p>
+
+                        <p>This isn't about e-bikes. It's about unit economics at the driver level creating platform-level advantages.</p>
+
+                        <p><strong>For fleet managers:</strong> We're opening 50 partnership slots in Q2. If your platform operates in Toronto, Vancouver, or NYC, let's talk about a pilot.</p>
+
+                        <p style="margin-top: 24px;">
+                            <a href="mailto:daksharyax@gmail.com?subject=Fleet%20Partnership%20Inquiry&body=Hey%20Daksh%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20Zoomo%20fleet%20partnerships.%0A%0AOur%20platform%3A%20%0ACity%2Fcities%20we%20operate%20in%3A%20%0ACurrent%20fleet%20size%3A%20%0A%0ALooking%20forward%20to%20connecting." class="btn btn-primary" style="display: inline-flex; text-decoration: none; font-size: 14px; padding: 12px 20px;">
+                                <i class="fas fa-handshake"></i> Reply "FLEET" - Get the Case Study
+                            </a>
+                        </p>
+                    </div>
+                    <div class="sample-results">
+                        <div class="sample-results-title">Results</div>
+                        <div class="sample-results-text">
+                            Contributed to Uber and DoorDash enterprise conversations | Part of $2.2M deployment strategy
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="section-header reveal">
+            <div class="section-tag">Capabilities</div>
+            <h2 class="section-title">Skills & Stack</h2>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-category reveal">
+                <div class="skill-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <h3 class="skill-category-title">Revenue Copy</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Direct-Response</span>
+                    <span class="skill-tag">Newsletters</span>
+                    <span class="skill-tag">Sales Scripts</span>
+                    <span class="skill-tag">Email Nurture</span>
+                    <span class="skill-tag">Narrative Design</span>
+                    <span class="skill-tag">GTM Strategy</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <div class="skill-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="skill-category-title">AI / Automation</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">n8n</span>
+                    <span class="skill-tag">Make</span>
+                    <span class="skill-tag">APIs</span>
+                    <span class="skill-tag">Zapier</span>
+                    <span class="skill-tag">Claude/GPT-4o</span>
+                    <span class="skill-tag">AI Agents</span>
+                </div>
+            </div>
+
+            <div class="skill-category reveal">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="skill-category-title">Analytics & Ops</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">HubSpot</span>
+                    <span class="skill-tag">Salesforce</span>
+                    <span class="skill-tag">PowerBI</span>
+                    <span class="skill-tag">Google Analytics</span>
+                    <span class="skill-tag">SEO Systems</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Daksh Section -->
+    <section class="section why-daksh" id="why">
+        <div class="section-header reveal">
+            <div class="section-tag">The Pitch</div>
+            <h2 class="section-title">Why Daksh?</h2>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card reveal">
+                <div class="why-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="why-title">Founder Synergy</h3>
+                <p class="why-desc">
+                    I don't wait for tutorials. I built Cubik and onboarded 23 partners in 90 days. I understand the anxiety and velocity of a 0-to-1 founder because I've lived it.
+                </p>
+            </div>
+
+            <div class="why-card reveal">
+                <div class="why-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="why-title">The Operator-Writer</h3>
+                <p class="why-desc">
+                    Most copywriters don't understand your backend. With a B.Eng in Computer Science, I can write about AI and automations with a level of technical depth and systemic logic that standard writers lack.
+                </p>
+            </div>
+
+            <div class="why-card reveal">
+                <div class="why-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3 class="why-title">Revenue Architecture</h3>
+                <p class="why-desc">
+                    I write for MRR uplift, not just "engagement." Whether it's enterprise scripts for Uber-level deals or niche newsletters, every word is designed to move the needle.
+                </p>
+            </div>
+
+            <div class="why-card reveal">
+                <div class="why-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <h3 class="why-title">Night-Shift Momentum</h3>
+                <p class="why-desc">
+                    I turn your 8-hour workday into a 24-hour revenue engine. You set the strategic direction, and while you sleep, I execute. You wake up to progress, not a to-do list.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="cta-content reveal">
+            <h2 class="cta-title">Let's Build Together</h2>
+            <p class="cta-subtitle">
+                Ready to take ownership, communicate clearly, and care about quality.
+                The workload is execution-heavy and fast-paced? Perfect.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:daksharyax@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> daksharyax@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/daksharya/" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">
+            Crafted exclusively for <a href="#" class="footer-link">Khushpreet @ Dr.Ai & Kaur Capital</a> | 2025
+        </p>
+    </footer>
+
+    <script>
+        // Generate particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const colors = ['#2997ff', '#bf5af2', '#ff375f', '#30d158'];
+
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.width = (2 + Math.random() * 4) + 'px';
+                particle.style.height = particle.style.width;
+                container.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Scroll reveal animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 150;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Nav background on scroll
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.72)';
+            }
+        });
+
+        // Typing effect for terminal
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Interactive card tilt effect
+        document.querySelectorAll('.why-card, .role-card, .stat-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    if (target > 1000) {
+                        element.textContent = '$' + (start / 1000000).toFixed(1) + 'M';
+                    } else if (target < 100 && target > 10) {
+                        element.textContent = Math.floor(start);
+                    } else {
+                        element.textContent = Math.floor(start) + '%';
+                    }
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    if (target === 2200000) {
+                        element.textContent = '$2.2M';
+                    } else if (target === 23 || target === 90) {
+                        element.textContent = target;
+                    } else {
+                        element.textContent = target + '%';
+                    }
+                }
+            }
+            updateCounter();
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = document.querySelectorAll('.stat-number');
+                    const targets = [23, 2200000, 90, 35];
+                    counters.forEach((counter, index) => {
+                        animateCounter(counter, targets[index]);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
